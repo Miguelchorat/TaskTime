@@ -15,6 +15,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import modelo.Tarea;
+import util.Util;
 
 /**
  * Contenedor que se encarga de pintar cada tarea.
@@ -58,7 +59,7 @@ public class PanelTareas extends javax.swing.JPanel {
                 model.getjLabelNombre().setText(tareas.get(i).getNombre());
                 model.getjLabelDescripcion().setText(tareas.get(i).getDescripcion());
                 model.getjLabelDescripcion().setToolTipText(tareas.get(i).getDescripcion());
-                model.getjLabelFechaInicio().setText(tareas.get(i).getFechaInicio().toString());
+                model.getjLabelFechaInicio().setText(Util.ft.format(tareas.get(i).getFechaInicio()));
                 
                 
                 Border line = null;

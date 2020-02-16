@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import util.CRM;
+import util.Util;
 
 /**
  * Contenedor que mostrara información básica de un proyecto en concreto el cual
@@ -63,8 +64,8 @@ public class PanelProyecto extends javax.swing.JPanel {
                 jTextFieldFechaInicio.setText(" ---- ");
                 jTextFieldFechaFin.setText(" ---- ");
             }else{
-                jTextFieldFechaInicio.setText("  "+jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaInicio().toString());
-                jTextFieldFechaFin.setText("  "+jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaFin().toString());
+                jTextFieldFechaInicio.setText("  "+Util.ft.format(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaInicio()));
+                jTextFieldFechaFin.setText("  "+Util.ft.format(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaFin()));
             }
             jLabelTareasResult.setText(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getTareas().size()+"");
        //     imagenProyecto();

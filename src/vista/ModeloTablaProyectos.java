@@ -7,6 +7,7 @@ package vista;
 
 import javax.swing.table.AbstractTableModel;
 import modelo.TaskTime;
+import util.Util;
 
 /**
  * Modelo que implementara la tabla de proyectos para facilitar su refresco e inserccion de datos. 
@@ -68,8 +69,8 @@ public class ModeloTablaProyectos extends AbstractTableModel{
             {   
                 data[f][0]=t.getProyectos().get(f).getNombre();
                 data[f][1]=t.getProyectos().get(f).getDescripcion();
-                data[f][2]=t.getProyectos().get(f).getFechaInicio();
-                data[f][3]=t.getProyectos().get(f).getFechaFin();
+                data[f][2]=Util.ft.format(t.getProyectos().get(f).getFechaInicio());
+                data[f][3]=Util.ft.format(t.getProyectos().get(f).getFechaFin());
                 data[f][4]=t.getProyectos().get(f).getTareas().size();
                 data[f][5]=t.getProyectos().get(f);
             }

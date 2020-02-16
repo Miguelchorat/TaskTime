@@ -12,6 +12,7 @@ import java.util.Calendar;
 import modelo.Importancia;
 import modelo.Tarea;
 import util.CRM;
+import util.Util;
 
 /**
  * Ventana emergente que te mostrara un formulario de un tarea para guardar tareas.
@@ -359,8 +360,8 @@ public class VentanaAddTarea extends javax.swing.JDialog {
         int proyectoActual = jFramePadre.getTaskTime().getProyectoActivo();
         jFramePadre.getTaskTime().getProyectos().get(proyectoActual).addTarea(t);
         jFramePadre.getPanelProyecto().setTareas(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getTareas().size());
-        jFramePadre.getPanelProyecto().setjTextFieldFechaInicio(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaInicio().toString());
-        jFramePadre.getPanelProyecto().setjTextFieldFechaFin(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaFin().toString());
+        jFramePadre.getPanelProyecto().setjTextFieldFechaInicio(Util.ft.format(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaInicio()));
+        jFramePadre.getPanelProyecto().setjTextFieldFechaFin(Util.ft.format(jFramePadre.getTaskTime().getProyectos().get(jFramePadre.getTaskTime().getProyectoActivo()).getFechaFin()));
         jFramePadre.getPanelProyectos().refrescarProyectos();
         jFramePadre.getPanelTareas().limpiarTareas();
         jFramePadre.getPanelTareas().generarTareas();
